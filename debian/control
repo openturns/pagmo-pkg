@@ -3,7 +3,7 @@ Section: science
 Priority: extra
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
 Uploaders: Julien Schueller <schueller@phimeca.com>, Denis Barbier <barbier@debian.org>
-Build-Depends: debhelper (>= 9), quilt, cmake, libeigen3-dev, libnlopt-cxx-dev, libboost-serialization-dev
+Build-Depends: debhelper (>= 9), quilt, cmake, libeigen3-dev, libboost-serialization-dev, libtbb-dev
 Standards-Version: 4.1.3
 Homepage: https://github.com/esa/pagmo2
 Vcs-Browser: https://salsa.debian.org/science-team/pagmo

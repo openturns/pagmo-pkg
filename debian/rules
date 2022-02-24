@@ -29,7 +29,7 @@ override_dh_auto_configure:
             -DCMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING='$(ldflags)' \
             -DCMAKE_INSTALL_PREFIX:PATH=/usr \
             -DCMAKE_INSTALL_LIBDIR:PATH=lib \
-            -DPAGMO_WITH_EIGEN3=ON -DPAGMO_WITH_NLOPT=ON -DPAGMO_WITH_FORK_ISLAND=ON \
+            -DPAGMO_WITH_EIGEN3=ON \
             -DINSTALL_DESTDIR:PATH=$(CURDIR)/debian/tmp
 
 override_dh_strip:

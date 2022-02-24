@@ -1,26 +1,26 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: pagmo
-Upstream-Contact: Jerome Robert <jeromerobert@users.sf.net>
-Source: https://github.com/jeromerobert/pagmo/archive/
+Upstream-Contact: Francesco Biscani <Francesco.Biscani@esa.int>
+Source: https://github.com/esa/pagmo/archive/
 Debianized-By: Julien Schueller <schueller@phimeca.com>
-Debianized-Date: Sat, 22 Nov 2014 18:12:15 +0100.
+Debianized-Date: Tue, 22 Feb 2022 18:12:15 +0100.
 
 Files: *
-Copyright: Copyright (C) 2014-2015 Airbus Group SAS 
-License: GPL-2+
+Copyright: Copyright (C) 2004-2015 The PaGMO development team, Advanced Concepts Team (ACT), European Space Agency (ESA)
+License: GPL-3
 
 Files: debian/*
 Copyright: 2014 Julien Schueller
 License: Expat
 
-License: GPL-2+
+License: GPL-3
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 2
+ as published by the Free Software Foundation; either version 3
  of the License, or (at your option) any later version.
  .
  On Debian systems, the full text of the GNU General Public License
- version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
+ version 3 can be found in the file `/usr/share/common-licenses/GPL-3'.
 
 License: Expat
  Permission is hereby granted, free of charge, to any person obtaining

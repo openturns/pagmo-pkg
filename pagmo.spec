@@ -16,39 +16,39 @@ FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; \
 Name:           pagmo 
 Version:        2.18.0
 Release:        1%{?dist}
-Summary:        A hierarchical matrix C/C++ library
+Summary:        Perform parallel computations of optimisation tasks
 Group:          System Environment/Libraries
 License:        GPL2
-URL:            https://github.com/jeromerobert/hmat-oss
-Source0:        https://github.com/jeromerobert/hmat-oss/archive/%{version}.tar.gz
+URL:            https://esa.github.io/pagmo2/
+Source0:        https://github.com/esa/pagmo2/archive/v%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:  gcc-c++, cmake, eigen3-devel
+BuildRequires:  gcc-c++, cmake, boost-devel, eigen3-devel, tbb-devel
 Requires:       libpagmo2
 
 %description
-A hierarchical matrix C/C++ library including a LU solver.
+Perform parallel computations of optimisation tasks.
 
 %package -n libpagmo2
-Summary:        A hierarchical matrix C/C++ library 
+Summary:        Perform parallel computations of optimisation tasks
 Group:          Development/Libraries/C and C++
 
 %description -n libpagmo2
-A hierarchical matrix C/C++ library (binaries) 
+Perform parallel computations of optimisation tasks (binaries)
 
 %package devel
-Summary:        A hierarchical matrix C/C++ library 
+Summary:        Perform parallel computations of optimisation tasks
 Group:          Development/Libraries/C and C++
 Requires:       libpagmo2 = %{version}
 Requires:       eigen3-devel
 
 %description devel
-A hierarchical matrix C/C++ library (development files)
+Perform parallel computations of optimisation tasks (development files)
 
 %prep
-%setup -q
+%setup -q -n %{name}2-%{version}
 
 %build
-%cmake .
+%cmake -DPAGMO_WITH_EIGEN3=ON .
 make %{?_smp_mflags} 
 
 %install
@@ -74,5 +74,5 @@ rm -rf %{buildroot}
 %{_libdir}/cmake/pagmo/*.cmake
 
 %changelog
-* Sat Nov 22 2014 Julien Schueller <schueller at phimeca dot com> 1.0-1
+* Tue Feb 22 2022 Julien Schueller <schueller at phimeca dot com> 2.18.0-1
 - Initial package creation
