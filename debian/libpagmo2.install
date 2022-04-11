@@ -1,1 +1,1 @@
-usr/lib/libpagmo*.so.*
+usr/lib/*/libpagmo*.so.*
