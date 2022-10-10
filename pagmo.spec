@@ -7,12 +7,7 @@ License:        GPL3
 URL:            https://esa.github.io/pagmo2/
 Source0:        https://github.com/esa/pagmo2/archive/v%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:  gcc-c++, cmake, eigen3-devel, tbb-devel
-%if 0%{?sle_version} == 150300
-BuildRequires:  libboost_serialization1_75_0-devel
-%else
-BuildRequires:  boost-devel
-%endif
+BuildRequires:  gcc-c++, cmake, eigen3-devel, tbb-devel, boost-devel
 Requires:       libpagmo
 
 %description
@@ -30,6 +25,7 @@ Summary:        Perform parallel computations of optimisation tasks
 Group:          Development/Libraries/C and C++
 Requires:       libpagmo = %{version}
 Requires:       eigen3-devel
+Requires:       boost-devel
 
 %description devel
 Perform parallel computations of optimisation tasks (development files)
