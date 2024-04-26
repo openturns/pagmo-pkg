@@ -14,7 +14,7 @@ Vcs-Browser: https://salsa.debian.org/science-team/pagmo
 Vcs-Git: https://salsa.debian.org/science-team/pagmo.git
 Rules-Requires-Root: no
 
-Package: libpagmo8
+Package: libpagmo9
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends},
@@ -31,7 +31,7 @@ Package: libpagmo-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends},
-         libpagmo8 (= ${binary:Version}),
+         libpagmo9 (= ${binary:Version}),
          libeigen3-dev,
          libboost-serialization-dev,
          libtbb-dev
