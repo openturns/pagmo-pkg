@@ -1,37 +1,37 @@
-Name:           pagmo 
+Name:           pagmo2
 Version:        2.19.0
 Release:        1%{?dist}
-Summary:        Perform parallel computations of optimisation tasks
+Summary:        A C++ platform to perform parallel computations of optimisation tasks
 Group:          System Environment/Libraries
 License:        GPL3
 URL:            https://esa.github.io/pagmo2/
 Source0:        https://github.com/esa/pagmo2/archive/v%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:  gcc-c++, cmake, eigen3-devel, tbb-devel, boost-devel
-Requires:       libpagmo
+
+BuildRequires:  gcc-c++
+BuildRequires:  cmake
+BuildRequires:  eigen3-devel
+BuildRequires:  tbb-devel
+BuildRequires:  boost-devel
 
 %description
-Perform parallel computations of optimisation tasks.
-
-%package -n libpagmo
-Summary:        Perform parallel computations of optimisation tasks
-Group:          Development/Libraries/C and C++
-
-%description -n libpagmo
-Perform parallel computations of optimisation tasks (binaries)
+pagmo is a C++ scientific library for massively parallel optimization. It is
+built around the idea of providing a unified interface to optimization
+algorithms and to optimization problems and to make their deployment in
+massively parallel environments easy.
 
 %package devel
-Summary:        Perform parallel computations of optimisation tasks
+Summary:        Development files for %{name}
 Group:          Development/Libraries/C and C++
-Requires:       libpagmo = %{version}
+Requires:       %{name} = %{version}
 Requires:       eigen3-devel
 Requires:       boost-devel
 
 %description devel
-Perform parallel computations of optimisation tasks (development files)
+The %{name}-devel package contains development files for %{name}.
 
 %prep
-%setup -q -n %{name}2-%{version}
+%setup -q -n %{name}-%{version}
 
 %build
 %cmake -DPAGMO_WITH_EIGEN3=ON
@@ -40,20 +40,15 @@ Perform parallel computations of optimisation tasks (development files)
 %install
 %cmake_install
 
-%post -n libpagmo -p /sbin/ldconfig
-%postun -n libpagmo -p /sbin/ldconfig
-
-%files -n libpagmo
+%files
 %defattr(-,root,root,-)
-%{_libdir}/*.so.*
+%{_libdir}/libpagmo.so.9*
 
 %files devel
 %defattr(-,root,root,-)
-%dir %{_includedir}/pagmo/
+%{_libdir}/libpagmo.so
 %{_includedir}/pagmo/
-%{_libdir}/*.so
-%dir %{_libdir}/cmake/pagmo/
-%{_libdir}/cmake/pagmo/*.cmake
+%{_libdir}/cmake/pagmo/
 
 %changelog
 * Tue Feb 22 2022 Julien Schueller <schueller at phimeca dot com> 2.18.0-1
