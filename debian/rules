@@ -14,6 +14,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
             -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
             -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-            -DCMAKE_INSTALL_LIBDIR:PATH="/usr/lib/$(DEB_HOST_MULTIARCH)" \
+            -DCMAKE_INSTALL_LIBDIR:PATH=lib/$(DEB_HOST_MULTIARCH) \
+            -DCMAKE_UNITY_BUILD=ON \
             -DPAGMO_WITH_EIGEN3=ON \
             -DINSTALL_DESTDIR:PATH=$(CURDIR)/debian/tmp

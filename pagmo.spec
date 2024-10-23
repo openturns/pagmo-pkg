@@ -1,5 +1,5 @@
 Name:           pagmo2
-Version:        2.19.0
+Version:        2.19.1
 Release:        1%{?dist}
 Summary:        A C++ platform to perform parallel computations of optimisation tasks
 Group:          System Environment/Libraries
@@ -34,7 +34,7 @@ The %{name}-devel package contains development files for %{name}.
 %setup -q -n %{name}-%{version}
 
 %build
-%cmake -DPAGMO_WITH_EIGEN3=ON
+%cmake -DPAGMO_WITH_EIGEN3=ON -DCMAKE_UNITY_BUILD=ON
 %cmake_build
 
 %install
